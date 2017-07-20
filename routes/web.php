@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (App\Http\Requests\MyRequest $request) {
+    // Show "Illuminate\Http\Request" and not "App\Http\Requests\MyRequest"
 });
