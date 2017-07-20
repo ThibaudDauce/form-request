@@ -15,8 +15,12 @@ class AMiddleware
      */
     public function handle($request, Closure $next)
     {
-        // Dump "Illuminate\Http\Request" and not "App\Http\Requests\MyRequest"
-        dump(get_class($request));
+        if (! method_exists($request, 'filters')) {
+            return $next($request);
+        }
+
+        // Never executed
+        dump("Execute the filters in $request->filters()");
 
         return $next($request);
     }

@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function (App\Http\Requests\MyRequest $request) {
-    // Show "Illuminate\Http\Request" and not "App\Http\Requests\MyRequest"
+    return 'The name in the request is not filtered…';
 });

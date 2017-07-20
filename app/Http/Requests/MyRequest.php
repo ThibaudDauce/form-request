@@ -27,4 +27,11 @@ class MyRequest extends FormRequest
             //
         ];
     }
+
+    public function filters()
+    {
+        return [
+            'name' => ['trim', 'strtolower'],
+        ];
+    }
 }
